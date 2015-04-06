@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="http://192.168.0.15/~user5/bookshop">
+<!--<base href="http://192.168.0.15/~user5/bookshop">-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?=TITLE?></title>

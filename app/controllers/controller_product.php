@@ -6,7 +6,6 @@ class Controller_Product extends Controller
 	function __construct()
 	{
 		$this->model = new Model_Product();
-		$this->view = new View();
 	}
 	
 	function action_index()

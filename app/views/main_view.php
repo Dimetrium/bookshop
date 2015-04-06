@@ -4,7 +4,7 @@
 <?php if($booksmain): ?>
     <?php foreach($booksmain as $books):?>
         <div class="product">
-            <a href="<?=$_SERVER['REQUEST_URI']?>product/index/<?=$books['book_id']?>"><img src="<?=IMG.$books['img']?>" alt=Product"" class="feature"></a>
+            <a href="product/index/<?=$books['book_id']?>"><img src="<?=IMG.$books['img']?>" alt=Product"" class="feature"></a>
             <h3><a href="/product/index/<?=$books['book_id']?>"><?=$books['book_title']?></a></h3>
             <p><span><?=substr($books['full_text'], 0, 200)."..."?></span></p>
             <p>

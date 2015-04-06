@@ -7,6 +7,7 @@ class Controller_Main extends Controller
     {
         $this->model = new Model_Main();
         $this->view = new View();
+
     }
 
     function action_index()

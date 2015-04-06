@@ -45,7 +45,7 @@
                 </nav>
             </div><!--end user-menu-->
             <div id="view-cart">
-                <a href="/admin"><img src="<?=VIEW?>/img/password.gif" alt="Admin Panel"> Admin Panel</a>
+                <a href="/app/admin"><img src="<?=VIEW?>/img/password.gif" alt="Admin Panel"> Admin Panel</a>
             </div><!--end view-cart-->
         </section><!--end action-bar-->
     </header>

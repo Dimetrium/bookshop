@@ -1,4 +1,0 @@
-AuthType Basic   
-AuthName "For Me!" 
-AuthUserFile  	C:/OpenServer/domains/bookmag/admin/.htpasswd
-require valid-user

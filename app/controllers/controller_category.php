@@ -6,8 +6,9 @@ class Controller_Category extends Controller
 	function __construct()
 	{
 		$this->model = new Model_Category();
-		$this->view = new View();
-	}
+        $this->view = new View();
+
+    }
 	
 	function action_index()
 	{

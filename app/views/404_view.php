@@ -1,6 +1,3 @@
-<?=
-var_dump($_GET);?>
-
 <div id="container">
     <div id="row">
         <div class="center-block" style="width:40%">

@@ -8,7 +8,7 @@ class Model_Product extends Model
         $dbh = new PDO ( PDO_DSN, PDO_USER, PDO_PASSWORD );
 
         $segments=explode('/',trim($_SERVER['REQUEST_URI'],'/'));
-        $param = $segments[2];
+        $param = $segments[3];
 
         $query =
             "SELECT DISTINCT xyz_books.book_id, price, book_title, img, full_text, GROUP_CONCAT(DISTINCT author_title)
