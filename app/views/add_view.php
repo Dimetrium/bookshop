@@ -9,7 +9,7 @@
         <th>
         <Label for='genre_title'><p id="btngenre"><h3>Genre</h3></p></Label>
         <select multiple required size="5" name="genre_title" class="btngenre">
-        <?php foreach($getgenre as $genre): ?>
+        <?php foreach($genres as $genre): ?>
         <option><?=$genre['genre_title']?></option>
         <?php endforeach; ?>
         </select>
@@ -17,8 +17,8 @@
         <th>
         <Label for='author_title'><p id="btnauthor"><h3>Author</h3></p></Label>
         <select multiple required size="5" name="author_title" class="btnauthor">
-        <?php foreach($getauthors as $authors): ?>
-        <option><?=$authors['author_title']?></option>
+        <?php foreach($authors as $author): ?>
+        <option><?=$author['author_title']?></option>
         <?php endforeach; ?>
         </select>
         </th>

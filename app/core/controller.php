@@ -2,12 +2,14 @@
 
 class Controller {
 
-    public $model;
     public $view;
+    protected $dbh;
 
     function __construct()
     {
+
         $this->view = new View();
+
     }
 
     // действие (action), вызываемое по умолчанию

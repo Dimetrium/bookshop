@@ -17,7 +17,7 @@ class Controller_Login extends Controller
 			Такое решение не верно с точки зрения безопсаности и сделано для упрощения примера.
 			Логин и пароль должны храниться в БД, причем пароль должен быть захеширован.
 			*/
-			if($login=="admin" && $password=="12345")
+			if($login=="root" && $password=="123")
 			{
 				$data["login_status"] = "access_granted";
 				

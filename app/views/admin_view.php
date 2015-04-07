@@ -10,8 +10,9 @@
                 <p>
                     <a href="/admin/edit/<?=$books['book_id']?>" class="cart-btn">
                         <span class="price">$<?=$books['price']?></span><img src="<?=IMG?>white-cart.gif" alt="View Details">
-                        EDIT DELETE
+                        EDIT
                     </a>
+                <a href="/admin/del/<?=$books['book_id']?>" id="delBook" class="cart-btn">DELET</a>
                 </p>
             </div><!--end productS-->
         <?php endforeach?>

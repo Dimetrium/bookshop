@@ -4,7 +4,7 @@ require_once 'MysqlTemplate.php';
 class AdminSQL extends MysqlTemplate
 {
 
-	public function __construct()
+/*	public function __construct()
 	{
 		//
 	}
@@ -22,15 +22,15 @@ class AdminSQL extends MysqlTemplate
 	protected function myId()
 	{
 		parent::myId();
-	}
+	}*/
 
 
-	public function logo()
+/*	public function logo()
 	{
 		$path = $_SERVER['HTTP_HOST'];
 		$logo = '<div id="logo"><a href="http://'.$path.'/admin"><span id="logo-accent">B</span>ook <span id="logo-accent">M</span>agazine</a></div>';
 		return print($logo);
-	}
+	}*/
 
 	public function redirect($http = false)
 	{
@@ -46,7 +46,7 @@ class AdminSQL extends MysqlTemplate
 		}	
 	}
 
-	public function bookMain()
+/*	public function bookMain()
 	{
 		$query = 
 		"SELECT book_id, book_title, img, price, full_text 
@@ -54,27 +54,27 @@ class AdminSQL extends MysqlTemplate
 
 		$this->select($query);
 		return $this->result;
-	}
+	}*/
 
-	public function getGenre()
+/*	public function getGenre()
 	{
 		$query = 
 		"SELECT genre_title, genre_id 
 		FROM xyz_genres";
 		$this->select($query);
 		return $this->result;
-	}
+	}*/
 
 	//get genre from ID
-	public function getGenreID($genre_id)
-	{
-		$query = 
-		"SELECT genre_title 
-		FROM xyz_genres 
-		WHERE genre_id=$genre_id";
-		$this->select($query);
-		return $this->result;
-	}
+//	public function getGenreID($genre_id)
+//	{
+//		$query =
+//		"SELECT genre_title
+//		FROM xyz_genres
+//		WHERE genre_id=$genre_id";
+//		$this->select($query);
+//		return $this->result;
+//	}
 
 	//page genre(add)
 	public function idGengeAdd()
@@ -158,8 +158,8 @@ class AdminSQL extends MysqlTemplate
 	//get all authors
 	public function getAuthors()
 	{
-		$query = 
-		"SELECT author_title, author_id 
+		$query =
+		"SELECT author_title, author_id
 		FROM xyz_authors";
 		$this->select($query);
 		return $this->result;
@@ -228,7 +228,7 @@ class AdminSQL extends MysqlTemplate
 
 	/*-------------------------BOOK----------------------------*/ 
 	//details
-	public function getProduct($book_id)
+/*	public function getProduct($book_id)
 	{
 		$query = 
 		"SELECT DISTINCT xyz_books.book_id, price, book_title, img, full_text, 
@@ -244,7 +244,7 @@ class AdminSQL extends MysqlTemplate
 		GROUP BY book_title";
 		$this->select($query);
 		return $this->result[0];
-	}
+	}*/
 
 	//deleting book
 	public function delBook($book_id)
