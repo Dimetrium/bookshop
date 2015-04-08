@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--<base href="http://192.168.0.15/~user5/bookshop">-->
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?=TITLE?></title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?=CSS?>main.css">
-    <link rel="stylesheet" href="<?=CSS?>mormalize.css">
+    <link rel="stylesheet" href="<?=CSS?>normalize.css">
 </head>
 <body>
 <div id="wrapper">

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--<base href="http://192.168.0.15/~user5/bookshop">-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?= TITLE ?></title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= CSS ?>main.css">
-    <link rel="stylesheet" href="<?= CSS ?>mormalize.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="<?= CSS ?>normalize.css">
+    <script type="text/javascript" src="/public/js/jquery-2.1.3.js"></script>
 </head>
 <body>
 
-<?php if (($_GET['login'])) { ?>
+<?php if ( ( $_GET[ 'login' ] ) ) { ?>
     <script type="text/javascript"> $('#loginModal').modal('show'); </script>
 <?php } ?>
 
@@ -55,7 +51,8 @@
 
                                     <div class="form-group">
                                         <div class="col-xs-5 col-xs-offset-3">
-                                            <button type="submit" class="btn btn-primary" formaction="/login">Login</button>
+                                            <button type="submit" class="btn btn-primary" formaction="/login">Login
+                                            </button>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
                                             </button>
                                         </div>
@@ -66,44 +63,23 @@
                                 <form id="tab" method="post" class="form-horizontal">
 
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">Username</label>
+                                        <label class="col-xs-3 control-label">Name</label>
 
                                         <div class="col-xs-5">
-                                            <input type="text" value="" class="input-xlarge">
+                                            <input type="text" value="" name="name" class="input-xlarge">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">First Name</label>
+                                        <label class="col-xs-3 control-label">Password</label>
 
                                         <div class="col-xs-5">
-                                            <input type="text" value="" class="input-xlarge">
+                                            <input type="text" value="" name="password" class="input-xlarge">
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label class="col-xs-3 control-label">Last Name</label>
-
-                                        <div class="col-xs-5">
-                                            <input type="text" value="" class="input-xlarge">
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-xs-3 control-label">Email</label>
-
-                                        <div class="col-xs-5">
-                                            <input type="text" value="" class="input-xlarge">
-                                        </div>
-                                    </div>
-
-                                    <label class="col-xs-3 control-label">Address</label>
-                                    <textarea value="Smith" rows="3" class="input-xlarge">
-                                    </textarea>
 
                                     <div>
-                                        <button class="btn btn-primary">Create Account</button>
+                                        <button class="btn btn-primary" formaction="/user/new">Create Account</button>
                                     </div>
                                 </form>
                             </div>
@@ -186,9 +162,8 @@
         </section>
     </footer>
 </div>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="../../public/js/modal.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/js/modal.js"></script>
 <!--end wrapper-->
 </body>
 </html>

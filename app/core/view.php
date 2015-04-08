@@ -2,11 +2,7 @@
 
 class View
 {
-    /*
-     *  $content_file - виды отображающие контент страниц;
-     *  $template_file - общий для всех страниц шаблон;
-     *  $data - массив, содержащий элементы контента страницы. Обычно заполняется в модели.
-    */
+
     function GenreMenu ()
     {
         $dbh = DBConnect::getInstance();
@@ -44,10 +40,12 @@ SQL;
     {
 
         foreach ( $data as $row ) {
-            $booksmain[ ] = $row;// преобразуем элементы массива в переменные
-            $product[ ] = $row;// преобразуем элементы массива в переменные
+            $booksmain[ ] = $row;
+            $product[ ] = $row;
             $categorys[ ] = $row;
+            $userinfo[ ] = $row;
         }
+
         $genres = self::GenreMenu();
         $authors = self::AuthorMenu();
 

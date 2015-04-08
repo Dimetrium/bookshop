@@ -18,6 +18,5 @@
 <?php else: ?>
     <p>All books are sold</p>
 <?php endif; ?>
-    </div>
 </section>
 <hr>

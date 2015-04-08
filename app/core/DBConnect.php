@@ -73,7 +73,6 @@ class DBConnect
             throw new Exception( $e->getMessage() );
         }
     }
-/*
     public function insertRow ( $query, $params )
     {
         try {
@@ -83,16 +82,21 @@ class DBConnect
             throw new Exception( $e->getMessage() );
         }
     }
-
-    public function updateRow ( $query, $params )
+    public function lastInsertId()
     {
-        return $this->insertRow( $query, $params );
+        return $this->dbh->lastInsertId();
     }
+    /*
 
-    public function deleteRow ( $query, $params )
-    {
-        return $this->insertRow( $query, $params );
-    }*/
+        public function updateRow ( $query, $params )
+        {
+            return $this->insertRow( $query, $params );
+        }
+
+        public function deleteRow ( $query, $params )
+        {
+            return $this->insertRow( $query, $params );
+        }*/
 
     /**
      * Empty clone magic method to prevent duplication.

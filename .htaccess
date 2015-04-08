@@ -1,4 +1,4 @@
-AddDefaultCharset utf8
+#AddDefaultCharset utf8
 #RewriteBase /~user5/bookshop/
 
 RewriteEngine On

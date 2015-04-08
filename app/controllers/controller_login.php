@@ -7,9 +7,9 @@ class Controller_Login extends Controller
 	{
 		//$data["login_status"] = "";
 
-		if(isset($_POST['login']) && isset($_POST['password']))
+		if(isset($_POST['username']) && isset($_POST['password']))
 		{
-			$login = $_POST['login'];
+			$login = $_POST['username'];
 			$password =$_POST['password'];
 			
 			/*
@@ -21,7 +21,8 @@ class Controller_Login extends Controller
 			{
 				$data["login_status"] = "access_granted";
 				
-				session_start(); echo $_SESSION['admin'];
+				session_start();
+//                echo $_SESSION['admin'];
 				$_SESSION['admin'] = $password;
 				header('Location:/admin/');
 			}

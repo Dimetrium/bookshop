@@ -1,6 +1,3 @@
-/**
- * Created by Demitry on 07.04.2015.
- */
 $(document).ready(function () {
     $('#loginForm').formValidation({
         framework: 'bootstrap',
