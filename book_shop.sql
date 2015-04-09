@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 06 2015 г., 11:14
+-- Время создания: Апр 10 2015 г., 02:25
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.4.35
 
@@ -153,12 +153,23 @@ INSERT INTO `xyz_bycat` (`cat_id`, `book_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `xyz_cart_order` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) DEFAULT NULL,
-  `order_id` int(100) NOT NULL AUTO_INCREMENT,
+  `order_id` int(100) NOT NULL,
   `book_id` int(100) DEFAULT NULL,
   `quantity` int(10) DEFAULT NULL,
-  PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `xyz_cart_order`
+--
+
+INSERT INTO `xyz_cart_order` (`id`, `user_id`, `order_id`, `book_id`, `quantity`) VALUES
+(1, 1, 1, 1, 1),
+(2, 1, 1, 2, 2),
+(3, 2, 2, 3, 3),
+(4, 2, 2, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -188,15 +199,47 @@ INSERT INTO `xyz_genres` (`genre_id`, `genre_title`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `xyz_group`
+--
+
+CREATE TABLE IF NOT EXISTS `xyz_group` (
+  `role_name` varchar(10) NOT NULL,
+  `id_role` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id_role`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `xyz_group`
+--
+
+INSERT INTO `xyz_group` (`role_name`, `id_role`) VALUES
+('user', 0),
+('admin', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `xyz_orders`
 --
 
 CREATE TABLE IF NOT EXISTS `xyz_orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(100) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `pay_method_name` varchar(255) DEFAULT NULL,
-  `pay_status` int(1) unsigned DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `pay_method_id` varchar(255) DEFAULT NULL,
+  `pay_status_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `xyz_orders`
+--
+
+INSERT INTO `xyz_orders` (`id`, `order_id`, `date`, `pay_method_id`, `pay_status_id`) VALUES
+(1, 1, '2015-04-08 19:39:44', '1', 1),
+(2, 2, '2015-04-08 20:23:35', '3', 3),
+(3, 2, '2015-04-08 20:12:48', '2', 2),
+(4, 2, '2015-04-08 20:12:48', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -208,7 +251,17 @@ CREATE TABLE IF NOT EXISTS `xyz_payment_method` (
   `pay_method_id` int(2) NOT NULL AUTO_INCREMENT,
   `pay_method_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pay_method_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `xyz_payment_method`
+--
+
+INSERT INTO `xyz_payment_method` (`pay_method_id`, `pay_method_name`) VALUES
+(1, 'MasterCard'),
+(2, 'Visa'),
+(3, 'PayPal'),
+(4, 'WebMoney');
 
 -- --------------------------------------------------------
 
@@ -220,7 +273,16 @@ CREATE TABLE IF NOT EXISTS `xyz_pay_status` (
   `pay_status_id` int(2) NOT NULL AUTO_INCREMENT,
   `pay_status_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pay_status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `xyz_pay_status`
+--
+
+INSERT INTO `xyz_pay_status` (`pay_status_id`, `pay_status_name`) VALUES
+(1, 'Pending'),
+(2, 'Delivery'),
+(5, 'Complite');
 
 -- --------------------------------------------------------
 
@@ -233,15 +295,39 @@ CREATE TABLE IF NOT EXISTS `xyz_users` (
   `user_id` int(10) NOT NULL AUTO_INCREMENT,
   `password` varchar(10) DEFAULT NULL,
   `name` varchar(10) DEFAULT NULL,
+  `role_id` int(11) DEFAULT '0',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Дамп данных таблицы `xyz_users`
 --
 
-INSERT INTO `xyz_users` (`discount`, `user_id`, `password`, `name`) VALUES
-(NULL, 1, '123wer', 'User One');
+INSERT INTO `xyz_users` (`discount`, `user_id`, `password`, `name`, `role_id`) VALUES
+(NULL, 1, '123', 'root', 1),
+(5, 2, 'one', 'user one', 0),
+(10, 3, 'two', 'user two', 0),
+(NULL, 4, '123qwe', 'John', 0),
+(NULL, 12, 'TEST', 'TEST', 0),
+(NULL, 13, 'TEST', 'TEST', 0),
+(NULL, 14, 'TESTs', 'TESTs', 0),
+(NULL, 15, 'TESTs', 'TESTs', 0),
+(NULL, 16, 'TESTs', 'TESTs', 0),
+(NULL, 17, 'TESTs', 'TESTs', 0),
+(NULL, 18, 'TESTs', 'TESTs', 0),
+(NULL, 19, 'TESTs', 'TESTs', 0),
+(NULL, 20, '', '', 0),
+(NULL, 21, '', '', 0),
+(NULL, 22, 'TEST', 'TEST', 0),
+(NULL, 23, 'TEST', 'TEST', 0),
+(NULL, 24, 'TEST', 'TEST', 0),
+(NULL, 25, 'TEST', 'TEST', 0),
+(NULL, 26, 'TEST', 'TEST', 0),
+(NULL, 27, 'TEST', 'TEST', 0),
+(NULL, 28, 'sdfsdf', 'fdsfsdf', 0),
+(NULL, 29, 'sdfsdf', 'fdsfsdf', 0),
+(NULL, 30, NULL, NULL, 0),
+(NULL, 31, 'ggg', 'nnn', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
