@@ -24,7 +24,7 @@ SQL;
     public function getBook ()
     {
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-        $param = $segments[ 2 ];
+        $param = $segments[ 4 ];
 
         $query = <<<SQL
             SELECT DISTINCT xyz_books.book_id, price, book_title, img, full_text, GROUP_CONCAT(DISTINCT author_title)

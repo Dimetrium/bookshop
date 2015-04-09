@@ -26,12 +26,11 @@ class Controller_Admin extends Controller
 
     }
 
-    // Действие для разлогинивания администратора
     function action_logout ()
     {
         session_start();
         session_destroy();
-        header( 'Location:/' );
+        header( 'Location: /~user5/bookshop/' );
     }
 
     function action_add ()

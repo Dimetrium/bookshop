@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<base href="/~user5/bookshop/">
     <title><?= TITLE ?></title>
-    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= CSS ?>main.css">
-    <link rel="stylesheet" href="<?= CSS ?>normalize.css">
-    <script type="text/javascript" src="/public/js/jquery-2.1.3.js"></script>
+    <link rel="stylesheet" href="<?= CSS ?>bootstrap.min.css" type='text/css'>
+    <link rel="stylesheet" href="<?= CSS ?>main.css" type='text/css'>
+    <link rel="stylesheet" href="<?= CSS ?>normalize.css" type='text/css'>
+    <script type="text/javascript" src="<?= JS ?>jquery-2.1.3.js"></script>
 </head>
 <body>
 
@@ -51,7 +52,7 @@
 
                                     <div class="form-group">
                                         <div class="col-xs-5 col-xs-offset-3">
-                                            <button type="submit" class="btn btn-primary" formaction="/login">Login
+                                            <button type="submit" class="btn btn-primary" formaction="login">Login
                                             </button>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
                                             </button>
@@ -79,7 +80,7 @@
                                     </div>
 
                                     <div>
-                                        <button class="btn btn-primary" formaction="/user/new">Create Account</button>
+                                        <button class="btn btn-primary" formaction="user/new">Create Account</button>
                                     </div>
                                 </form>
                             </div>
@@ -94,7 +95,7 @@
 <div id="wrapper">
     <header>
         <section id="action-bar">
-            <div id="logo"><a href="/"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop</a>
+            <div id="logo"><a href="/~user5/bookshop/"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop</a>
             </div>
             <nav class="dropdown">
                 <ul>
@@ -103,7 +104,7 @@
                         <ul>
                             <?php foreach ( $genres as $item ): ?>
                                 <li>
-                                    <a href="/category/genre/<?= $item[ 'genre_id' ] ?>"><?= $item[ 'genre_title' ] ?></a>
+                                    <a href="category/genre/<?= $item[ 'genre_id' ] ?>"><?= $item[ 'genre_title' ] ?></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -119,7 +120,7 @@
                             <ul>
                                 <?php foreach ( $authors as $author ): ?>
                                     <li>
-                                        <a href="/category/author/<?= $author[ 'author_id' ] ?>"><?= $author[ 'author_title' ] ?></a>
+                                        <a href="category/author/<?= $author[ 'author_id' ] ?>"><?= $author[ 'author_title' ] ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -162,8 +163,8 @@
         </section>
     </footer>
 </div>
-<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/public/js/modal.js"></script>
+<script type="text/javascript" src="<?= JS ?>bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= JS ?>modal.js"></script>
 <!--end wrapper-->
 </body>
 </html>

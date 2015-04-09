@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<base href="/~user5/bookshop/">
     <title><?=TITLE?></title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?=CSS?>main.css">
@@ -12,12 +12,12 @@
     <header>
         <section id="action-bar">
             <div id="logo">
-                <a href="/admin"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop <span id="logo-accent">A</span>dmin</a>
+                <a href="admin"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop <span id="logo-accent">A</span>dmin</a>
             </div>
             <nav class="dropdown">
                 <ul>
                     <li>
-                        <a href="/admin/add">Add New Book <img src="<?=IMG?>down-arrow.gif" alt="By Genre" /></a>
+                        <a href="admin/add">Add New Book <img src="<?=IMG?>down-arrow.gif" alt="By Genre" /></a>
                     </li>
                 </ul>
             </nav>
@@ -25,13 +25,13 @@
                 <nav class="dropdown">
                     <ul>
                         <li>
-                            <a href="/admin/user"><img src="<?=IMG?>user-icon.gif" alt="By Authors"/> Edit Users <img src="<?=IMG?>down-arrow.gif" alt="Authors"/></a>
+                            <a href="admin/user"><img src="<?=IMG?>user-icon.gif" alt="By Authors"/> Edit Users <img src="<?=IMG?>down-arrow.gif" alt="Authors"/></a>
                         </li>
                     </ul>
                 </nav>
             </div><!--end user-menu-->
             <div id="view-cart">
-                <a href="/admin/logout"><img src="<?=IMG?>password.gif" alt="Admin Panel"> Log Out</a>
+                <a href="admin/logout"><img src="<?=IMG?>password.gif" alt="Admin Panel"> Log Out</a>
             </div><!--end view-cart-->
         </section><!--end action-bar-->
     </header>

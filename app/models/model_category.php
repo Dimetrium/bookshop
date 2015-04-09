@@ -11,8 +11,7 @@ class Model_Category extends Model
     {
         // Get id from URI
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-        $param = $segments[ 2 ];
-
+        $param = $segments[ 4 ];
         $query = <<<SQL
         SELECT *
 		FROM xyz_books, xyz_genres
@@ -31,7 +30,7 @@ SQL;
     {
         // Get id from URI
         $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-        $param = $segments[ 2 ];
+        $param = $segments[ 4 ];
 
         $query = <<<SQL
         SELECT *

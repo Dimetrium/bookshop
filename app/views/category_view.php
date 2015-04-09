@@ -8,11 +8,11 @@
     <?php if($categorys): ?>
     <?php foreach($categorys as $category_item):?>
         <div class="product">
-            <a href="/product/index/<?=$category_item['book_id']?>"><img src="<?=IMG.$category_item['img']?>" alt=Product"" class="feature"></a>
-                        <h3><a href="/product/index/<?=$category_item['book_id']?>"><?=$category_item['book_title']?></a></h3>
+            <a href="product/index/<?=$category_item['book_id']?>"><img src="<?=IMG.$category_item['img']?>" alt=Product"" class="feature"></a>
+                        <h3><a href="product/index/<?=$category_item['book_id']?>"><?=$category_item['book_title']?></a></h3>
                         <p><span><?=substr($category_item['full_text'], 0, 200)."..."?></span></p>
                         <p>
-                            <a href="/product/index/<?=$category_item['book_id']?>" class="cart-btn">
+                            <a href="product/index/<?=$category_item['book_id']?>" class="cart-btn">
                                 <span class="price">$<?=$category_item['price']?></span><img src="<?=IMG?>white-cart.gif" alt="View Details">
                                     VIEW DETAILS
                                 </a>
