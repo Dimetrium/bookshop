@@ -2,17 +2,24 @@
 
 class Model
 {
+    /**
+     * @var DBConnect instance holder
+     */
     protected $dbh;
 
-    public function __construct()
+    /**
+     * Constructor
+     * Get instance of DBConnect class
+     */
+    public function __construct ()
     {
+
         $this->dbh = DBConnect::getInstance();
 
     }
 
-    // метод выборки данных
-    public function get_data()
+    // get data method
+    public function get_data ()
     {
-        // todo
     }
 }

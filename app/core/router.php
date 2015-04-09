@@ -3,11 +3,18 @@ class Router
 {
     static function start()
     {
+        /**
+         * default controller and action
+         */
         $controller_name = 'Main';
         $action_name = 'index';
 
+        /**
+         * parse URI and get controller and action names
+         * @var array
+         */
         $routes = explode('/', $_SERVER['REQUEST_URI']);
-        $routes = array_slice($routes, 2);
+//        $routes = array_slice($routes, 1);
         if ( !empty($routes[1]) )
         {
             $controller_name = $routes[1];
@@ -17,7 +24,14 @@ class Router
         {
             $action_name = $routes[2];
         }
-
+        /**
+         * Define model, where model name = 'Model_' prefix + controller name,
+         * and include if exist.
+         *
+         * Concatenate prefix to controller and action
+         * and include if exist.
+         * @var string
+         */
         $model_name = 'Model_'.$controller_name;
         $controller_name = 'Controller_'.$controller_name;
         $action_name = 'action_'.$action_name;
@@ -40,7 +54,10 @@ class Router
         {
             Router::ErrorPage404();
         }
-
+        /**
+         * get instance of controller
+         * and call action
+         */
         $controller = new $controller_name;
         $action = $action_name;
 

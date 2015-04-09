@@ -27,7 +27,6 @@ class Controller_User extends Controller
 
     function action_new ()
     {
-        $this->model->new_user();
         $data = $this->model->get_data();
         $this->view->generate( 'user_view.php', 'template_view.php', $data );
 

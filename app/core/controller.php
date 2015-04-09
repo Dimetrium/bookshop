@@ -1,10 +1,16 @@
 <?php
 
 class Controller {
+    /**
+     * @var View holder of View Controller instance
+     */
+    protected $view;
 
-    public $view;
-    protected $dbh;
-
+    /**
+     * Constructor
+     *
+     * Get instance of View Controller
+     */
     function __construct()
     {
 
@@ -12,9 +18,8 @@ class Controller {
 
     }
 
-    // действие (action), вызываемое по умолчанию
+    // the action caused the default
     function action_index()
     {
-        // todo
     }
 }

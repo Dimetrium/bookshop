@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="/~user5/bookshop/">
+    <base href="<?= BASE ?>">
     <title><?= TITLE ?></title>
     <link rel="stylesheet" href="<?= CSS ?>bootstrap.min.css" type='text/css'>
     <link rel="stylesheet" href="<?= CSS ?>main.css" type='text/css'>
@@ -95,7 +95,8 @@
 <div id="wrapper">
     <header>
         <section id="action-bar">
-            <div id="logo"><a href="/~user5/bookshop/"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop</a>
+            <div id="logo"><a href="<?= BASE ?>"><span id="logo-accent">B</span>ook <span
+                        id="logo-accent">S</span>hop</a>
             </div>
             <nav class="dropdown">
                 <ul>
@@ -147,7 +148,7 @@
 
         <section class="clearfix">
             <div id="copyright">
-                <div id="logo"><a href="/"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop</a>
+                <div id="logo"><a href="<?= BASE ?>"><span id="logo-accent">B</span>ook <span id="logo-accent">S</span>hop</a>
                 </div>
                 <!--end logo-->
                 <p id="store-desc">This is a short description of the store.</p>
@@ -163,6 +164,7 @@
         </section>
     </footer>
 </div>
+
 <script type="text/javascript" src="<?= JS ?>bootstrap.min.js"></script>
 <script type="text/javascript" src="<?= JS ?>modal.js"></script>
 <!--end wrapper-->
