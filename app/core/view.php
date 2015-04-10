@@ -2,7 +2,12 @@
 
 class View
 {
-
+/**
+ * temporary 'kostely' for generate category/author list
+ *
+ * TODO: Move this 'kostyl's' to main model
+ *
+ */
     function GenreMenu ()
     {
         $dbh = DBConnect::getInstance();
@@ -35,6 +40,7 @@ SQL;
         return $author;
 
     }
+    // End 'Kostyl'
 
     function generate ( $content_view, $template_view, $data = array() )
     {

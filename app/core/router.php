@@ -14,7 +14,7 @@ class Router
          * @var array
          */
         $routes = explode('/', $_SERVER['REQUEST_URI']);
-//        $routes = array_slice($routes, 1);
+        $routes = array_slice($routes, 2);
         if ( !empty($routes[1]) )
         {
             $controller_name = $routes[1];
