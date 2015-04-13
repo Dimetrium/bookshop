@@ -1,14 +1,23 @@
+
 <header>
-<a href="<?=$_SERVER['REQUEST_URI']?>en">En</a>
-<a href="<?=$_SERVER['REQUEST_URI']?>ru">Ru</a>
+    <div class="btn-group" role="group" aria-label="...">
+        <form action="<?php $_SERVER[ 'REQUEST_URI' ] ?>" method="post">
+                        <button type="submit" name="lang" value="en" class="btn btn-default">En</button>
+                        <button type="submit" name="lang" value="ru" class="btn btn-default">Ru</button>
+<!--            <button onclick="SendPost()" type="submit" name="lang" value="en" class="btn btn-default">En</button>-->
+<!--            <button onclick="SendPost()" type="submit" name="lang" value="ru" class="btn btn-default">Ru</button>-->
+        </form>
+    </div>
+
     <section id="action-bar">
-        <div id="logo"><a href="<?= BASE ?>"><span id="logo-accent">B</span>ook <span
+        <div id="logo">
+            <a href="<?= BASE ?>"><span id="logo-accent">B</span>ook <span
                     id="logo-accent">S</span>hop</a>
         </div>
         <nav class="dropdown">
             <ul>
                 <li>
-                    <a href="#">By Genre <img src="<?= IMG ?>down-arrow.gif" alt="By Genre"/></a>
+                    <a href="#">{{BY_GENRE}}<img src="<?= IMG ?>down-arrow.gif" alt={{BY_GENRE}}/></a>
                     <ul>
                         <?php foreach ( $genres as $item ): ?>
                             <li>
@@ -23,7 +32,7 @@
             <nav class="dropdown">
                 <ul>
                     <li>
-                        <a href="#"><img src="<?= IMG ?>user-icon.gif" alt="By Authors"/> By Authors <img
+                        <a href="#"><img src="<?= IMG ?>user-icon.gif" alt="By Authors"/>{{BY_AUTHORS}}<img
                                 src="<?= IMG ?>down-arrow.gif" alt="Authors"/></a>
                         <ul>
                             <?php foreach ( $authors as $author ): ?>
@@ -38,7 +47,7 @@
         </div>
         <div id="view-cart">
             <a href="#" data-toggle="modal" data-target="#loginModal"><img src="<?= IMG ?>password.gif"
-                                                                           alt="Admin Panel"> Sign in\Sign Up</a>
+                                                                           alt="Admin Panel">{{SIGN_UP}}</a>
         </div>
     </section>
 </header>

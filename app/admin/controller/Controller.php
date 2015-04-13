@@ -16,7 +16,7 @@ class Controller
                 $booksmain = $admsql->bookMain();
             break;
       
-            case ('product'):
+            case ('data'):
                 $book_id = abs((int)$_GET['book_id']);
                     if($book_id)
                         {
@@ -92,7 +92,7 @@ class Controller
              
             /*-------------------------BOOK----------------------------*/    
             // book details    
-            case ('product'):
+            case ('data'):
                 $book_id = abs((int)$_GET['book_id']);
                 if($book_id)
                     {

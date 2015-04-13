@@ -2,16 +2,15 @@
 
 class Model_Category extends Model
 {
+//    private $param;
 
     public function get_data ()
     {
+
     }
 
     public function getByGenre ()
     {
-        // Get id from URI
-        $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-        $param = $segments[ 4 ];
 
         $query = <<<SQL
         SELECT *
@@ -21,17 +20,15 @@ class Model_Category extends Model
 		AND xyz_genres.genre_id = xyz_bycat.cat_id
 		AND genre_id = :id;
 SQL;
-        $data = $this->dbh->getRows( $query, array( 'id' => $param ) );
-        $this->dbh = null;
+        $data = $this->dbh->getRows( $query, array( 'id' => $this->param ) );
+        $this->dbh = NULL;
+
         return $data;
 
     }
 
     public function getByAuthor ()
     {
-        // Get id from URI
-        $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-        $param = $segments[ 4 ];
 
         $query = <<<SQL
         SELECT *
@@ -41,10 +38,11 @@ SQL;
         AND xyz_authors.author_id = xyz_byauth.auth_id
         AND author_id = :id ;
 SQL;
-        $data = $this->dbh->getRows( $query, array( 'id' => $param ) );
-        $this->dbh = null;
+        $data = $this->dbh->getRows( $query, array( 'id' => $this->param ) );
+        $this->dbh = NULL;
 
         return $data;
+
     }
 
 }

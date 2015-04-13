@@ -3,9 +3,10 @@
 class Controller_Category extends Controller
 {
 
-    function __construct ()
+    function __construct ($param)
     {
-        $this->model = new Model_Category();
+
+        $this->model = new Model_Category($param);
         $this->view = new View();
 
     }
@@ -16,6 +17,7 @@ class Controller_Category extends Controller
 
     function action_genre ()
     {
+
         $data = $this->model->getByGenre();
         $this->view->generate( 'category_view.php', 'template_view.php', $data );
         $dbh = null;
@@ -23,6 +25,7 @@ class Controller_Category extends Controller
 
     function action_author ()
     {
+
         $data = $this->model->getByAuthor();
         $this->view->generate( 'category_view.php', 'template_view.php', $data );
         $dbh = null;

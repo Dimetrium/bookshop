@@ -2,12 +2,37 @@
 
 class View
 {
-/**
- * temporary 'kostely' for generate category/author list
- *
- * TODO: Move this 'kostyl's' to main model
- *
- */
+
+
+    function generate ( $content_view, $template_view, $data = array() )
+    {
+
+        foreach ( $data as $row ) {
+            $data[ ] = $row;
+        }
+        $data = array_filter( $data );
+        $genres = self::GenreMenu();
+        $authors = self::AuthorMenu();
+
+        ob_start();
+        include 'app/views/' . $template_view;
+        $hz = ob_get_contents();
+        ob_end_clean();
+
+        $lang = 'ru';
+        $language = new Lang( $lang );
+        $langArray = $language->getLang();
+        $language->addToReplace( $langArray );
+        echo $language->templateRender( $hz );
+
+    }
+
+    /**
+     * temporary 'kostely' for generate category/author list
+     *
+     * TODO: Move this 'kostyl's' to main model
+     *
+     */
     function GenreMenu ()
     {
         $dbh = DBConnect::getInstance();
@@ -18,7 +43,7 @@ class View
             ORDER BY  `genre_id`;
 SQL;
         $genres = $dbh->getRows( $query );
-        $dbh = null;
+        $dbh = NULL;
 
         return $genres;
 
@@ -35,34 +60,12 @@ SQL;
             ORDER BY  `author_title`;
 SQL;
         $author = $dbh->getRows( $query );
-        $dbh = null;
+        $dbh = NULL;
 
         return $author;
 
     }
-    // End 'Kostyl'
-
-    function generate ( $content_view, $template_view, $data = array() )
-    {
-
-        foreach ( $data as $row ) {
-            $booksmain[ ] = $row;
-            $product[ ] = $row;
-            $categorys[ ] = $row;
-            $userinfo[ ] = $row;
-        }
-
-        $genres = self::GenreMenu();
-        $authors = self::AuthorMenu();
-
-        @$booksmain = array_filter( $booksmain );
-        @$product = array_filter( $product[ 0 ] );
-        @$categorys = array_filter( $categorys );
-
-        include 'app/views/' . $template_view;
-
-        unset( $genres );
-        unset( $authors );
-        unset( $booksmain );
-    }
+    /**
+     * End 'Kostyl'
+     */
 }

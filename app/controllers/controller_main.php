@@ -1,4 +1,5 @@
 <?php
+
 /**
  * class "Controller_Main"
  * Generate Main page
@@ -10,10 +11,12 @@ class Controller_Main extends Controller
      *
      * Get instance of Main Model and View Controller
      */
-    function __construct ()
+    function __construct ($param)
     {
-        parent::__construct();
-        $this->model = new Model_Main();
+
+        $this->model = new Model_Main($param);
+        $this->view = new View();
+
     }
 
     /**
@@ -25,9 +28,13 @@ class Controller_Main extends Controller
      */
     function action_index ()
     {
+
+        $template = 'main_view.php';
+
         /**
          * @return array
          */
+
         $data = $this->model->get_data();
 
         /**
@@ -38,10 +45,15 @@ class Controller_Main extends Controller
          * @param $data array
          */
         if ( is_array( $data ) ) {
-            return $this->view->generate( 'main_view.php', 'template_view.php', $data );
+            return $this->view->generate( $template, 'template_view.php', $data );
         } else {
             throw new Exception( 'Method "generate" expected array.' );
         }
     }
 
 }
+
+
+
+
+

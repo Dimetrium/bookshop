@@ -1,12 +1,12 @@
 <section id="main-content" class="clearfix">
     <hr>
 
-    <h2><?=$categorys[0]['author_title'];?></h2>
-    <h2><?=$categorys[0]['genre_title'];?></h2>
+    <h2><?=$data[0]['author_title'];?></h2>
+    <h2><?=$data[0]['genre_title'];?></h2>
 
     <div id="listings">
-    <?php if($categorys): ?>
-    <?php foreach($categorys as $category_item):?>
+    <?php if($data): ?>
+    <?php foreach($data as $category_item):?>
         <div class="product">
             <a href="product/index/<?=$category_item['book_id']?>"><img src="<?=IMG.$category_item['img']?>" alt=Product"" class="feature"></a>
                         <h3><a href="product/index/<?=$category_item['book_id']?>"><?=$category_item['book_title']?></a></h3>
@@ -14,13 +14,13 @@
                         <p>
                             <a href="product/index/<?=$category_item['book_id']?>" class="cart-btn">
                                 <span class="price">$<?=$category_item['price']?></span><img src="<?=IMG?>white-cart.gif" alt="View Details">
-                                    VIEW DETAILS
+                                {{PRODUCT_BUTTON_MAIN}}
                                 </a>
                         </p>
         </div><!--end product1-->
         <?php endforeach?>
     <?php else: ?>
-    <p>All books are sold</p>
+    <p>{{ALL_BOOK_SOLID}}</p>
     <?php endif; ?>
     </div>
 </section>

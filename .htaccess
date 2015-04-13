@@ -1,13 +1,18 @@
 AddDefaultCharset utf8
-RewriteBase /~user5/bookshop/
-
-<IfModule mod_rewrite.c>    
-Options +FollowSymLinks
 RewriteEngine On
+
+#RewriteBase /~user5/bookshop/
+RewriteBase /
+
+
+
+
 RewriteCond %{REQUEST_URI} !-f
 RewriteCond %{REQUEST_URI} !-d
 RewriteCond %{REQUEST_URI} !-l
-#RewriteRule ^(.)$ index.php [QSA,L]
-RewriteRule !\.(js|jpeg|css|jpg|html|gif|png)$ index.php [L]
 
-</IfModule>
+RewriteRule !\.(js|jpeg|css|jpg|html|gif|png)$ index.php [PT]
+
+#RewriteRule ^ru/(.*)$ /1?lang=ru [L,QSA]
+
+

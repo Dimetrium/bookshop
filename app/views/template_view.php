@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<?= CSS ?>main.css" type='text/css'>
     <link rel="stylesheet" href="<?= CSS ?>normalize.css" type='text/css'>
     <script type="text/javascript" src="<?= JS ?>jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="<?= JS ?>lang.js"></script>
+    <script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
 </head>
 <body>
 
@@ -20,6 +22,7 @@
 
 <?php include 'app/views/header_view.php';?>
 <?php include 'app/views/' . $content_view; ?>
+<?php //echo $content_view; ?>
 <?php include 'app/views/footer_view.php';?>
 
 </div>

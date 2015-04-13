@@ -22,7 +22,7 @@ class Model_Product extends Model
      * @var $param stored book id
      */
     $segments = explode( '/', trim( $_SERVER[ 'REQUEST_URI' ], '/' ) );
-    $param = $segments[ 4 ];
+    $param = $segments[ 2 ];
     $query = <<<SQL
     SELECT DISTINCT xyz_books.book_id, price, book_title, img, full_text,
     GROUP_CONCAT(DISTINCT author_title) AS author_title,
@@ -40,7 +40,7 @@ SQL;
     $result = $this->dbh->getRows( $query, array( 'id' => $param ) );
     $this->dbh = null;
 
-    return $result;
+    return $result[0];
 
   }
 
